@@ -3,7 +3,7 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
 # Pong with Pygame
-## CS110 Final Project Spring, 2023
+## CS110 Final Project Spring, 2024
 
 ## Team Members
 
@@ -40,39 +40,40 @@ Classic Pong Game. 2 players that can move their paddles up and down with either
 ### Classes
 
 Ball - This class defines a basic implementation for a ball object in Pygame. It initializes with an x and y coordinate, assigns a radius of 5, and sets initial speeds in both x and y directions. The move method updates the ball's position based on its speed, and the draw method renders the ball on a Pygame surface.
+
 Paddle - This class represents a paddle object in a Pygame environment. Upon initialization, it requires x and y coordinates, and sets default width and height values. The move method allows the paddle to move vertically by a specified amount (dy), adjusting both the paddle's position and its associated rectangle. Finally, the draw method renders the paddle on a Pygame surface.
 
 ## ATP
 
-# Test 1 : Game Initialization
+### Test 1 : Game Initialization
 
 - Step 1: Launch the Pong game.
 - Step 2: Verify that the game window opens with the correct dimensions.
 - Step 3: Ensure that the paddles, ball, and score display are visible.
 - Expected Outcome: The game initializes successfully with all game elements displayed correctly.
 
-# Test 2: Paddle Movement
+### Test 2: Paddle Movement
 
 - Step 1: Start the game.
 - Step 2: Use the arrow keys or designated keys to move the paddles up and down.
 - Step 3: Verify that both paddles respond to input and move accordingly.
 - Expected Outcome: Paddle movement controls are responsive and functional.
 
-# Test 3: Ball Movement
+### Test 3: Ball Movement
 
 - Step 1: Start the game.
 - Step 2: Observe the movement of the ball.
 - Step 3: Ensure that the ball moves continuously and bounces off the paddles and walls.
 - Expected Outcome: The ball moves smoothly and interacts correctly with game elements.
 
-# Test 4: Score Tracking
+### Test 4: Score Tracking
 
 - Step 1: Start the game.
 - Step 2: Play several rounds, allowing the ball to go past the opponent's paddle.
 - Step 3: Monitor the score display to ensure it updates accurately.
 - Expected Outcome: The score increments correctly when the ball passes the opponent's paddle and updates on the score display.
 
-# Test 5: Game Over Condition
+### Test 5: Game Over Condition
 
 - Step 1: Start the game.
 - Step 2: Play until one player reaches the winning score limit (e.g., 3 points).
