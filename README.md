@@ -37,11 +37,13 @@ Classic Pong Game. 2 players that can move their paddles up and down with either
 4. Game over condition: The game ends when one player reaches a predefined winning score limit (3 goals).
 5. Responsive user interface: The game provides clear feedback to players through visual elements such as paddle movement, ball trajectory, and score display.
 
-### Classes
+## Classes
 
-Ball - This class defines a basic implementation for a ball object in Pygame. It initializes with an x and y coordinate, assigns a radius of 5, and sets initial speeds in both x and y directions. The move method updates the ball's position based on its speed, and the draw method renders the ball on a Pygame surface.
+### Ball:
+ This class defines a basic implementation for a ball object in Pygame. It initializes with an x and y coordinate, assigns a radius of 5, and sets initial speeds in both x and y directions. The move method updates the ball's position based on its speed, and the draw method renders the ball on a Pygame surface.
 
-Paddle - This class represents a paddle object in a Pygame environment. Upon initialization, it requires x and y coordinates, and sets default width and height values. The move method allows the paddle to move vertically by a specified amount (dy), adjusting both the paddle's position and its associated rectangle. Finally, the draw method renders the paddle on a Pygame surface.
+### Paddle:
+ This class represents a paddle object in a Pygame environment. Upon initialization, it requires x and y coordinates, and sets default width and height values. The move method allows the paddle to move vertically by a specified amount (dy), adjusting both the paddle's position and its associated rectangle. Finally, the draw method renders the paddle on a Pygame surface.
 
 ## ATP
 
