@@ -4,6 +4,10 @@ from paddle import Paddle
 
 class Controller:
     def __init__(self):
+        """
+        Initializes the Controller class
+        Sets up pygame, initializes game variables, and creates game objects
+        """
         # setup pygame data
         self.screen_width = 800
         self.screen_height = 600
@@ -57,7 +61,7 @@ class Controller:
                     quit()
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                    waiting = False
+                        waiting = False
 
     def handle_events(self):
         """

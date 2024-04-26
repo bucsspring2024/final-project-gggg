@@ -5,9 +5,9 @@ from controller import Controller
 def main():
     pygame.init()
     #Create an instance on your controller object
-    Controller(self)
+    pong_game = Controller()
     #Call your mainloop
-    mainloop()
+    pong_game.mainloop()
     ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
 
 # https://codefather.tech/blog/if-name-main-python/
