@@ -1,7 +1,7 @@
 import pygame
 
-from ball import Ball
-from paddle import Paddle
+from src.ball import Ball
+from src.paddle import Paddle
 
 class Controller:
     def __init__(self):
@@ -74,7 +74,7 @@ class Controller:
         """
         self.screen.fill((0, 0, 0))
         menu_font = pygame.font.Font(None, 50)
-        menu_text = menu_font.render("Press Space to Start", True, (255, 255, 255))
+        menu_text = menu_font.render("Press Space to Start Playing Pong!", True, (255, 255, 255))
         menu_rect = menu_text.get_rect(center=(self.screen_width // 2, self.screen_height // 2))
         self.screen.blit(menu_text, menu_rect)
         pygame.display.flip()
