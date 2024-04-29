@@ -1,4 +1,5 @@
 import pygame
+
 from ball import Ball
 from paddle import Paddle
 
@@ -26,14 +27,37 @@ class Controller:
         
         self.score1 = 0
         self.score2 = 0
+        
+        self.is_menu = True
 
     def mainloop(self):
         """
         Main Game loop
         Handles events, updates game state, and draws game objects
         """
+        self.menu_loop()
         while True:
-            self.handle_events()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+
+            # Get the state of the keys
+            keys = pygame.key.get_pressed()
+
+            # Move paddle 1
+            if keys[pygame.K_w]:
+                self.paddle1.move(-self.paddle_speed)
+            if keys[pygame.K_s]:
+                self.paddle1.move(self.paddle_speed)
+
+            # Move paddle 2
+            if keys[pygame.K_UP]:
+                self.paddle2.move(-self.paddle_speed)
+            if keys[pygame.K_DOWN]:
+                self.paddle2.move(self.paddle_speed)
+
+            # Update game state and draw objects
             self.update()
             self.draw()
 
@@ -42,11 +66,13 @@ class Controller:
                 self.gameoverloop()
 
             self.clock.tick(60)
+
     
     def menu_loop(self):
         """
         Displays the main menu and waits for the player to start the game by pressing the spacebar.
         """
+        self.screen.fill((0, 0, 0))
         menu_font = pygame.font.Font(None, 50)
         menu_text = menu_font.render("Press Space to Start", True, (255, 255, 255))
         menu_rect = menu_text.get_rect(center=(self.screen_width // 2, self.screen_height // 2))
@@ -62,24 +88,7 @@ class Controller:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
                         waiting = False
-
-    def handle_events(self):
-        """
-        Handles pygame events, such as quitting the game and paddle movement
-        """
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_w:
-                    self.paddle1.move(-self.paddle_speed)
-                elif event.key == pygame.K_s:
-                    self.paddle1.move(self.paddle_speed)
-                elif event.key == pygame.K_UP:
-                    self.paddle2.move(-self.paddle_speed)
-                elif event.key == pygame.K_DOWN:
-                    self.paddle2.move(self.paddle_speed)
+                        self.is_menu = False
 
     def update(self):
         """
@@ -103,6 +112,8 @@ class Controller:
         elif self.ball.x >= self.screen_width:
             self.score1 += 1
             self.ball.reset()
+            if self.score1 >= 2:
+                self.gameoverloop()
 
     def draw(self):
         """
