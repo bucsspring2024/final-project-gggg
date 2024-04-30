@@ -75,9 +75,9 @@ Classic Pong Game. 2 players that can move their paddles up and down with either
 - Step 3: Verify that a menu pops up with the message "Press Space to Start Playing Pong!".
 - Expected Outcome: A menu should appear at the beginning of the game, prompting the player to press the spacebar to start playing.
 
-### Test 5: Game Over Message Display
+### Test 5: Collision Detection
 
 - Step 1: Start the game.
-- Step 2: Play until one player reaches the winning score limit (e.g., 3 points).
-- Step 3: Observe the game screen.
-- Expected Outcome: After a player reaches the winning score limit, a game over message should appear, indicating the end of the game.
+- Step 2: Allow the ball to collide with one of the paddles.
+- Step 3: Observe the behavior of the ball upon collision.
+- Expected Outcome: When the ball collides with a paddle, it should change direction accordingly, bouncing off the paddle's surface without passing through it. This also goes for the top and bottom walls of the window.
