@@ -1,5 +1,4 @@
 import pygame
-
 from src.ball import Ball
 from src.paddle import Paddle
 
@@ -112,7 +111,8 @@ class Controller:
         elif self.ball.x >= self.screen_width:
             self.score1 += 1
             self.ball.reset()
-            if self.score1 >= 2:
+            
+        if self.score1 >= 2:
                 self.gameoverloop()
 
     def draw(self):

@@ -1,6 +1,6 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=14588114&assignment_repo_type=AssignmentRepo)
 
-:warning: Everything between << >> needs to be replaced (remove << >> after replacing)
+
 
 # Pong with Pygame
 ## CS110 Final Project Spring, 2024
@@ -13,7 +13,7 @@ Albi Dobrova
 
 ## Project Description
 
-Classic Pong Game. 2 players that can move their paddles up and down with either W and S key, or UP and DOWN arrow keys. Goals are scored if the ball collides with a players respective side. The ball can bounce off walls and paddles through collision handling.
+Classic Pong Game. 2 players that can move their paddles up and down with either W and S key, or UP and DOWN arrow keys. Goals are scored if the ball collides with a players respective side. The ball can bounce off the top and bottom walls and paddles through collision handling in pygame. There is a popup start menu screen that prompts the user to hit space bar to begin the game. After any player reaches 2 goals, a game over screen is shown. 
 
 ***    
 
@@ -34,7 +34,7 @@ Classic Pong Game. 2 players that can move their paddles up and down with either
 1. Player-controlled paddles: Players can move their paddles up and down to hit the ball.
 2. Ball movement and collision: The ball moves continuously and bounces off the paddles and walls.
 3. Score tracking: The game keeps track of each player's score as they successfully hit the ball past their opponent's paddle.
-4. Game over condition: The game ends when one player reaches a predefined winning score limit (3 goals).
+4. Game over condition: The game ends when one player reaches a predefined winning score limit (2 goals).
 5. Responsive user interface: The game provides clear feedback to players through visual elements such as paddle movement, ball trajectory, and score display.
 
 ## Classes
@@ -68,16 +68,16 @@ Classic Pong Game. 2 players that can move their paddles up and down with either
 - Step 3: Ensure that the ball moves continuously and bounces off the paddles and walls.
 - Expected Outcome: The ball moves smoothly and interacts correctly with game elements.
 
-### Test 4: Score Tracking
+### Test 4: Menu Pop-Up
 
-- Step 1: Start the game.
-- Step 2: Play several rounds, allowing the ball to go past the opponent's paddle.
-- Step 3: Monitor the score display to ensure it updates accurately.
-- Expected Outcome: The score increments correctly when the ball passes the opponent's paddle and updates on the score display.
+- Step 1: Launch the Pong game.
+- Step 2: Observe the initial game screen.
+- Step 3: Verify that a menu pops up with the message "Press Space to Start Playing Pong!".
+- Expected Outcome: A menu should appear at the beginning of the game, prompting the player to press the spacebar to start playing.
 
-### Test 5: Game Over Condition
+### Test 5: Game Over Message Display
 
 - Step 1: Start the game.
 - Step 2: Play until one player reaches the winning score limit (e.g., 3 points).
-- Step 3: Verify that the game ends and displays a game over message.
-- Expected Outcome: The game ends when one player reaches the winning score limit, and a game over message is displayed.
+- Step 3: Observe the game screen.
+- Expected Outcome: After a player reaches the winning score limit, a game over message should appear, indicating the end of the game.
