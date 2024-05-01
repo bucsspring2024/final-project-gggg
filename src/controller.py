@@ -30,39 +30,33 @@ class Controller:
         self.is_menu = True
 
     def mainloop(self):
-        """
-        Main Game loop
-        Handles events, updates game state, and draws game objects
-        """
         self.menu_loop()
-        while True:
+        running = True
+        while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    running = False
                     pygame.quit()
                     quit()
 
-            # Get the state of the keys
             keys = pygame.key.get_pressed()
 
-            # Move paddle 1
             if keys[pygame.K_w]:
                 self.paddle1.move(-self.paddle_speed)
             if keys[pygame.K_s]:
                 self.paddle1.move(self.paddle_speed)
 
-            # Move paddle 2
             if keys[pygame.K_UP]:
                 self.paddle2.move(-self.paddle_speed)
             if keys[pygame.K_DOWN]:
                 self.paddle2.move(self.paddle_speed)
 
-            # Update game state and draw objects
             self.update()
             self.draw()
 
-            # Check game over condition
-            if self.score1 >= 3 or self.score2 >= 3:
+            if self.score1 >= 1 or self.score2 >= 1:
                 self.gameoverloop()
+                running = False
 
             self.clock.tick(60)
 
@@ -111,9 +105,6 @@ class Controller:
         elif self.ball.x >= self.screen_width:
             self.score1 += 1
             self.ball.reset()
-            
-        if self.score1 >= 2:
-                self.gameoverloop()
 
     def draw(self):
         """
@@ -128,23 +119,20 @@ class Controller:
         pygame.display.flip()
 
     def gameoverloop(self):
-        """
-        Displays the game over message and final scores
-        Waits for a moment before restarting the game
-        """
-        # Display game over message and final scores
         game_over_text = self.font.render("Game Over", True, (255, 255, 255))
-        self.screen.blit(game_over_text, (self.screen_width // 2 - game_over_text.get_width() // 2, self.screen_height // 2 - game_over_text.get_height() // 2))
-
         final_score_text = self.font.render(f"Final Score: {self.score1} - {self.score2}", True, (255, 255, 255))
+
+        self.screen.blit(game_over_text, (self.screen_width // 2 - game_over_text.get_width() // 2, self.screen_height // 2 - game_over_text.get_height() // 2))
         self.screen.blit(final_score_text, (self.screen_width // 2 - final_score_text.get_width() // 2, self.screen_height // 2 + game_over_text.get_height()))
-
         pygame.display.flip()
-
-        # Wait for a moment before restarting the game
-        pygame.time.wait(4000)
-
+        pygame.time.wait(2000)  # Wait to display game over screen
+    
         # Reset scores and ball position
         self.score1 = 0
         self.score2 = 0
+        
         self.ball.reset()
+        self.mainloop()
+        pygame.display.flip()
+        
+        

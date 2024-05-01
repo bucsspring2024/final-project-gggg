@@ -19,7 +19,5 @@ class Ball:
         pygame.draw.circle(surface, (255, 255, 255), (self.x + self.radius, self.y + self.radius), self.radius)
     
     def reset(self):
-        self.x = self.start_x
-        self.y = self.start_y
         self.rect.x = self.x
         self.rect.y = self.y
