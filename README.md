@@ -21,7 +21,7 @@ Classic Pong Game. 2 players that can move their paddles up and down with either
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+![initial gui](assets/initialgui.jpg)
 
 ### Final Design
 
