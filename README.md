@@ -13,19 +13,18 @@ Albi Dobrova
 
 ## Project Description
 
-Classic Pong Game. 2 players that can move their paddles up and down with either W and S key, or UP and DOWN arrow keys. Goals are scored if the ball collides with a players respective side. The ball can bounce off the top and bottom walls and paddles through collision handling in pygame. There is a popup start menu screen that prompts the user to hit space bar to begin the game. After any player scores 1 goal, a game over screen is shown, then the start game menu is shown again. 
-
+Classic Pong Game. 2 players that can move their paddles up and down with either W and S key, or UP and DOWN arrow keys. Goals are scored if the ball collides with a players respective side. The ball can bounce off the top and bottom walls and paddles through collision handling in pygame. There is a popup start menu screen that prompts the user to hit space bar to begin the game. After any player scores 1 goal, a game over screen is shown and the game window closes.
 ***    
 
 ## GUI Design
 
 ### Initial Design
 
-![initial gui](assets/initialgui.jpg)
+![initial gui](assets/initialgui.png)
 
 ### Final Design
 
-![final gui](assets/finalgui.jpg)
+![final gui](assets/finalgui.png)
 
 ## Program Design
 
@@ -34,7 +33,7 @@ Classic Pong Game. 2 players that can move their paddles up and down with either
 1. Player-controlled paddles: Players can move their paddles up and down to hit the ball.
 2. Ball movement and collision: The ball moves continuously and bounces off the paddles and walls.
 3. Score tracking: The game keeps track of each player's score as they successfully hit the ball past their opponent's paddle.
-4. Game over condition: The game ends when one player reaches a predefined winning score limit (2 goals).
+4. Game over condition: The game ends when one player reaches a predefined winning score limit.
 5. Responsive user interface: The game provides clear feedback to players through visual elements such as paddle movement, ball trajectory, and score display.
 
 ## Classes

@@ -6,8 +6,8 @@ class Ball:
         self.y = y
         self.radius = 5
         self.rect = pygame.Rect(self.x, self.y, self.radius * 2, self.radius * 2)
-        self.speed_x = 3
-        self.speed_y = 3
+        self.speed_x = 4
+        self.speed_y = 4
 
     def move(self):
         self.x += self.speed_x

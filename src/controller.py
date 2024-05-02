@@ -1,4 +1,6 @@
 import pygame
+import os
+import json
 from src.ball import Ball
 from src.paddle import Paddle
 
@@ -27,7 +29,24 @@ class Controller:
         self.score1 = 0
         self.score2 = 0
         
+        
         self.is_menu = True
+   
+    def write_score_to_json(self):
+        """
+        Writes the final score to a JSON file in the 'src' folder.
+        """
+        # Specify the folder path
+        folder_path = "/Users/albi/github-classroom/bucsspring2024/final-project-gggg/src"
+        filename = os.path.join(folder_path, 'final_scores.json')
+        data = {
+            'Player1 Score': self.score1,
+            'Player2 Score': self.score2
+        }
+        #os.makedirs(folder_path, exist_ok=True)  # Create the folder if it doesn't exist
+        with open(filename, 'w') as file:
+            json.dump(data, file)
+        print('Score written to JSON file successfully')
 
     def mainloop(self):
         self.menu_loop()
@@ -56,6 +75,7 @@ class Controller:
 
             if self.score1 >= 1 or self.score2 >= 1:
                 self.gameoverloop()
+                self.write_score_to_json()
                 running = False
 
             self.clock.tick(60)
@@ -127,12 +147,8 @@ class Controller:
         pygame.display.flip()
         pygame.time.wait(2000)  # Wait to display game over screen
     
-        # Reset scores and ball position
-        self.score1 = 0
-        self.score2 = 0
+    
         
-        self.ball.reset()
-        self.mainloop()
-        pygame.display.flip()
+        
         
         
