@@ -155,7 +155,7 @@ class Controller:
 
     def gameoverloop(self):
         """
-        Displays the game over screen with final scores.
+        Displays the game over screen with final scores from final_scores.json.
         """
         game_over_text = self.font.render("Game Over", True, (255, 255, 255))
 
