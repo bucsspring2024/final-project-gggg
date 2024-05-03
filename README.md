@@ -13,7 +13,7 @@ Albi Dobrova
 
 ## Project Description
 
-Classic Pong Game. 2 players that can move their paddles up and down with either W and S key, or UP and DOWN arrow keys. Goals are scored if the ball collides with a players respective side. The ball can bounce off the top and bottom walls and paddles through collision handling in pygame. There is a popup start menu screen that prompts the user to hit space bar to begin the game. After any player scores 1 goal, a game over screen is shown and the game window closes.
+Classic Pong Game. 2 players that can move their paddles up and down with either W and S key, or UP and DOWN arrow keys. Goals are scored if the ball collides with a players respective side. The ball can bounce off the top and bottom walls and paddles through collision handling in pygame. There is a popup start menu screen that prompts the user to hit space bar to begin the game. After any player scores 1 goal, a game over screen is shown and the game window closes. The Final Score displayed at the end is taken from a json file that is both opened and read within the controller.
 ***    
 
 ## GUI Design

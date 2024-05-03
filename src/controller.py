@@ -37,7 +37,7 @@ class Controller:
         Writes the final score to a JSON file in the 'src' folder.
         """
         # Specify the folder path
-        folder_path = "/Users/albi/github-classroom/bucsspring2024/final-project-gggg/src"
+        folder_path = "./src"
         filename = os.path.join(folder_path, 'final_scores.json')
         data = {
             'Player1 Score': self.score1,
@@ -47,6 +47,21 @@ class Controller:
         with open(filename, 'w') as file:
             json.dump(data, file)
         print('Score written to JSON file successfully')
+    
+    def read_score_from_json(self):
+        """
+        Reads the final score from the JSON file.
+        """
+        folder_path = "./src"
+        filename = os.path.join(folder_path, 'final_scores.json')
+        if os.path.exists(filename):
+            with open(filename, 'r') as file:
+                data = json.load(file)
+                self.score1 = data.get('Player1 Score', 0)
+                self.score2 = data.get('Player2 Score', 0)
+                print('Score read from JSON file successfully')
+        else:
+            print('JSON file does not exist. No scores read.')
 
     def mainloop(self):
         self.menu_loop()
@@ -139,11 +154,19 @@ class Controller:
         pygame.display.flip()
 
     def gameoverloop(self):
+        """
+        Displays the game over screen with final scores.
+        """
         game_over_text = self.font.render("Game Over", True, (255, 255, 255))
-        final_score_text = self.font.render(f"Final Score: {self.score1} - {self.score2}", True, (255, 255, 255))
+
+        # Read scores from JSON file
+        self.read_score_from_json()
+
+        # Display final scores from JSON file
+        final_score_json_text = self.font.render(f"Final Score: {self.score1} - {self.score2}", True, (255, 255, 255))
 
         self.screen.blit(game_over_text, (self.screen_width // 2 - game_over_text.get_width() // 2, self.screen_height // 2 - game_over_text.get_height() // 2))
-        self.screen.blit(final_score_text, (self.screen_width // 2 - final_score_text.get_width() // 2, self.screen_height // 2 + game_over_text.get_height()))
+        self.screen.blit(final_score_json_text, (self.screen_width // 2 - final_score_json_text.get_width() // 2, self.screen_height // 2 + 2 * game_over_text.get_height()))
         pygame.display.flip()
         pygame.time.wait(2000)  # Wait to display game over screen
     
